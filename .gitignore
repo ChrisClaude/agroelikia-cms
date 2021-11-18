@@ -113,5 +113,5 @@ exports
 build
 .strapi-updater.json
 
-yarn.lock
+#yarn.lock
 package-lock.json
