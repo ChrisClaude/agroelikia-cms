@@ -15,10 +15,6 @@
     "name": {
       "type": "string"
     },
-    "user": {
-      "plugin": "users-permissions",
-      "model": "user"
-    },
     "description": {
       "type": "text"
     },
@@ -27,6 +23,10 @@
     },
     "telephone": {
       "type": "string"
+    },
+    "owner": {
+      "plugin": "users-permissions",
+      "model": "user"
     }
   }
 }
