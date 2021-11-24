@@ -7,12 +7,11 @@ const {parseMultipartData, sanitizeEntity} = require('strapi-utils');
  */
 
 module.exports = {
-  /**
+   /**
    * Create a shop.
    *
    * @return {Object}
    */
-
   async create(ctx) {
     let entity;
     if (ctx.is('multipart')) {
@@ -75,8 +74,13 @@ module.exports = {
     return sanitizeEntity(entity, {model: strapi.models.shop});
   },
 
-  // Get logged in users shops
-  /*async me(ctx) {
+  /**
+   * Retrieve logged in users' records.
+   *
+   * @return {Array}
+   */
+
+  async me(ctx) {
     const owner = ctx.state.user;
 
     if (!owner) {
@@ -92,5 +96,5 @@ module.exports = {
     }
 
     return sanitizeEntity(data, { model: strapi.models.shop });
-  },*/
+  },
 };
