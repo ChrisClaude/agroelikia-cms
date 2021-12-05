@@ -97,4 +97,11 @@ module.exports = {
 
     return sanitizeEntity(data, { model: strapi.models.shop });
   },
+
+  async findProducts(ctx) {
+    const shopId = ctx.params.id;
+    const data = await strapi.services.product.find({shop: shopId});
+    return sanitizeEntity(data, { model: strapi.models.product });
+  }
 };
+

@@ -10,6 +10,14 @@
     },
     {
       "method": "GET",
+      "path": "/shops/:id/products",
+      "handler": "shop.findProducts",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
       "path": "/shops/me",
       "handler": "shop.me",
       "config": {
