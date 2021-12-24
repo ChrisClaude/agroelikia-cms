@@ -1,17 +1,10 @@
-/*module.exports = ({env}) => ({
+module.exports = ({env}) => ({
   settings: {
     cors: {
       enabled: true,
-      origin: env('CORS_ORIGIN', 'https://agroelikia-frontend-app.vercel.app/').split(',')
+      headers: '*',
+      origin: ["https://agroelikia-frontend-app.vercel.app", "http://localhost:4200"]
     }
   }
-})*/
+})
 
-module.exports = {
-  settings: {
-    cors: {
-      enabled: true,
-      origin: ["https://agroelikia-frontend-app.vercel.app",],
-    },
-  },
-};
