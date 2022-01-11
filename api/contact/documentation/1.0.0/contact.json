@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/carts": {
+    "/contacts": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Cart"
+                    "$ref": "#/components/schemas/Contact"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Cart"
+          "Contact"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Cart"
+                  "$ref": "#/components/schemas/Contact"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Cart"
+          "Contact"
         ],
         "requestBody": {
           "description": "",
@@ -247,71 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCart"
+                "$ref": "#/components/schemas/NewContact"
               }
             }
           }
         }
       }
     },
-    "/carts/me": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Cart"
-        ],
-        "parameters": []
-      }
-    },
-    "/carts/count": {
+    "/contacts/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -363,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Cart"
+          "Contact"
         ],
         "parameters": []
       }
     },
-    "/carts/{id}": {
+    "/contacts/me": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -378,7 +321,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Cart"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -416,7 +363,60 @@
         },
         "summary": "",
         "tags": [
-          "Cart"
+          "Contact"
+        ],
+        "parameters": []
+      }
+    },
+    "/contacts/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Contact"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Contact"
         ],
         "parameters": [
           {
@@ -440,7 +440,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Cart"
+                  "$ref": "#/components/schemas/Contact"
                 }
               }
             }
@@ -478,7 +478,7 @@
         },
         "summary": "",
         "tags": [
-          "Cart"
+          "Contact"
         ],
         "requestBody": {
           "description": "",
@@ -486,7 +486,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCart"
+                "$ref": "#/components/schemas/NewContact"
               }
             }
           }
@@ -552,7 +552,7 @@
         },
         "summary": "",
         "tags": [
-          "Cart"
+          "Contact"
         ],
         "parameters": [
           {
@@ -571,7 +571,7 @@
   },
   "components": {
     "schemas": {
-      "Cart": {
+      "Contact": {
         "required": [
           "id"
         ],
@@ -579,7 +579,25 @@
           "id": {
             "type": "string"
           },
+          "name": {
+            "type": "string"
+          },
+          "organization": {
+            "type": "string"
+          },
+          "typeOfActivity": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
           "product": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "products": {
             "required": [
               "id"
             ],
@@ -587,29 +605,20 @@
               "id": {
                 "type": "string"
               },
-              "name": {
+              "product": {
                 "type": "string"
               },
-              "shop": {
+              "quantity": {
+                "type": "integer"
+              },
+              "user": {
                 "type": "string"
               },
-              "slug": {
-                "type": "uid"
-              },
-              "images": {
+              "contacts": {
                 "type": "array",
                 "items": {
                   "type": "string"
                 }
-              },
-              "isAvailable": {
-                "type": "boolean"
-              },
-              "description": {
-                "type": "string"
-              },
-              "price": {
-                "type": "number"
               },
               "published_at": {
                 "type": "string"
@@ -622,10 +631,7 @@
               }
             }
           },
-          "quantity": {
-            "type": "integer"
-          },
-          "user": {
+          "creator": {
             "required": [
               "id",
               "username",
@@ -670,74 +676,37 @@
               }
             }
           },
-          "contacts": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "organization": {
-                  "type": "string"
-                },
-                "typeOfActivity": {
-                  "type": "string"
-                },
-                "phone": {
-                  "type": "string"
-                },
-                "product": {
-                  "type": "string"
-                },
-                "address": {
-                  "type": "string"
-                },
-                "products": {
-                  "type": "string"
-                },
-                "creator": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
           "published_at": {
             "type": "string",
             "format": "date-time"
           }
         }
       },
-      "NewCart": {
+      "NewContact": {
         "properties": {
+          "name": {
+            "type": "string"
+          },
+          "organization": {
+            "type": "string"
+          },
+          "typeOfActivity": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
           "product": {
             "type": "string"
           },
-          "quantity": {
-            "type": "integer"
-          },
-          "user": {
+          "address": {
             "type": "string"
           },
-          "contacts": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "products": {
+            "type": "string"
+          },
+          "creator": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -755,7 +724,7 @@
   },
   "tags": [
     {
-      "name": "Cart"
+      "name": "Contact"
     }
   ]
 }

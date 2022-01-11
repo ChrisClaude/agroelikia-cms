@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contacts",
+  "info": {
+    "name": "Contact"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "organization": {
+      "type": "string"
+    },
+    "typeOfActivity": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "product": {
+      "type": "string"
+    },
+    "address": {
+      "type": "text"
+    },
+    "products": {
+      "model": "cart",
+      "via": "contacts"
+    },
+    "creator": {
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}
