@@ -13,7 +13,7 @@ const grant = require("grant-koa");
 const { sanitizeEntity } = require("strapi-utils");
 const nodemailer = require('nodemailer');
 
-const emailRegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+const emailRegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const formatError = error => [
   { messages: [{ id: error.id, message: error.message, field: error.field }] }
 ];
@@ -157,8 +157,8 @@ module.exports = {
           provider,
           ctx.query
         );
-      } catch ([user, error]) {
-        return ctx.badRequest(null, error === "array" ? error[0] : error);
+      } catch (ex) {
+        return ctx.badRequest(null, ex.error === "array" ? ex.error[0] : ex.error);
       }
 
       if (!user) {
@@ -358,7 +358,7 @@ module.exports = {
     );
 
     try {
-      // Send an email to the user.
+      // Email the user.
       await strapi.plugins["email"].services.email.send({
         to: user.email,
         from:
