@@ -673,52 +673,6 @@
               }
             }
           },
-          "contacts": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "organization": {
-                  "type": "string"
-                },
-                "typeOfActivity": {
-                  "type": "string"
-                },
-                "phone": {
-                  "type": "string"
-                },
-                "product": {
-                  "type": "string"
-                },
-                "address": {
-                  "type": "string"
-                },
-                "products": {
-                  "type": "string"
-                },
-                "creator": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -735,12 +689,6 @@
           },
           "user": {
             "type": "string"
-          },
-          "contacts": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "published_at": {
             "type": "string",

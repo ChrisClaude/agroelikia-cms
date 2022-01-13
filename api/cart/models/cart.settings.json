@@ -21,10 +21,6 @@
     "user": {
       "plugin": "users-permissions",
       "model": "user"
-    },
-    "contacts": {
-      "via": "products",
-      "collection": "contact"
     }
   }
 }

@@ -597,40 +597,6 @@
           "address": {
             "type": "string"
           },
-          "products": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "product": {
-                "type": "string"
-              },
-              "quantity": {
-                "type": "integer"
-              },
-              "user": {
-                "type": "string"
-              },
-              "contacts": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
           "creator": {
             "required": [
               "id",
@@ -703,9 +669,6 @@
             "type": "string"
           },
           "address": {
-            "type": "string"
-          },
-          "products": {
             "type": "string"
           },
           "creator": {

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "01/13/2022 10:55:31 AM"
+    "x-generation-date": "01/13/2022 5:42:07 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -4659,52 +4659,6 @@
               }
             }
           },
-          "contacts": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "organization": {
-                  "type": "string"
-                },
-                "typeOfActivity": {
-                  "type": "string"
-                },
-                "phone": {
-                  "type": "string"
-                },
-                "product": {
-                  "type": "string"
-                },
-                "address": {
-                  "type": "string"
-                },
-                "products": {
-                  "type": "string"
-                },
-                "creator": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -4721,12 +4675,6 @@
           },
           "user": {
             "type": "string"
-          },
-          "contacts": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "published_at": {
             "type": "string",
@@ -4765,40 +4713,6 @@
           },
           "address": {
             "type": "string"
-          },
-          "products": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "product": {
-                "type": "string"
-              },
-              "quantity": {
-                "type": "integer"
-              },
-              "user": {
-                "type": "string"
-              },
-              "contacts": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
           },
           "creator": {
             "required": [
@@ -4872,9 +4786,6 @@
             "type": "string"
           },
           "address": {
-            "type": "string"
-          },
-          "products": {
             "type": "string"
           },
           "creator": {
