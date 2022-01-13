@@ -531,6 +531,7 @@ module.exports = {
                 <li>Nom d'utilisateur: <b>${user.username}</b></li>
                 <li>email: <b>${user.email}</b></li>
               </ul>
+              <p>Veuillez s'il vous plait informer l'utilisateur de l'issue de l'approbation en utilisant son email.</p>
               <p>Cordialement,</p>
               <p>L'equipe Agroelikia</p>
         `
