@@ -11,8 +11,11 @@
   },
   "devDependencies": {},
   "dependencies": {
+    "@strapi/provider-email-nodemailer": "^4.0.4",
+    "@strapi/provider-email-sendmail": "^4.0.4",
     "graphql": "^16.0.1",
     "knex": "0.21.18",
+    "nodemailer": "^6.7.2",
     "pg": "^8.7.1",
     "pg-connection-string": "^2.5.0",
     "slugify": "^1.6.3",

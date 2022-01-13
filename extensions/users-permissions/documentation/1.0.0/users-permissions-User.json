@@ -1209,6 +1209,10 @@
             "type": "boolean",
             "default": false
           },
+          "hasAppliedForShopOwnership": {
+            "type": "boolean",
+            "default": false
+          },
           "blocked": {
             "type": "boolean",
             "default": false
@@ -1282,6 +1286,10 @@
             "type": "string"
           },
           "confirmed": {
+            "type": "boolean",
+            "default": false
+          },
+          "hasAppliedForShopOwnership": {
             "type": "boolean",
             "default": false
           },

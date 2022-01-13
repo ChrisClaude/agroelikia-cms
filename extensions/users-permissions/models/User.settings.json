@@ -48,6 +48,11 @@
       "default": false,
       "configurable": false
     },
+    "hasAppliedForShopOwnership": {
+      "type": "boolean",
+      "default": false,
+      "configurable": true
+    },
     "blocked": {
       "type": "boolean",
       "default": false,

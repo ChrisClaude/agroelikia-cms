@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "01/11/2022 11:10:21 PM"
+    "x-generation-date": "01/13/2022 10:55:31 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -4642,6 +4642,9 @@
               "confirmed": {
                 "type": "boolean"
               },
+              "hasAppliedForShopOwnership": {
+                "type": "boolean"
+              },
               "blocked": {
                 "type": "boolean"
               },
@@ -4826,6 +4829,9 @@
                 "type": "string"
               },
               "confirmed": {
+                "type": "boolean"
+              },
+              "hasAppliedForShopOwnership": {
                 "type": "boolean"
               },
               "blocked": {
@@ -5108,6 +5114,9 @@
               "confirmed": {
                 "type": "boolean"
               },
+              "hasAppliedForShopOwnership": {
+                "type": "boolean"
+              },
               "blocked": {
                 "type": "boolean"
               },
@@ -5320,6 +5329,9 @@
                 "confirmed": {
                   "type": "boolean"
                 },
+                "hasAppliedForShopOwnership": {
+                  "type": "boolean"
+                },
                 "blocked": {
                   "type": "boolean"
                 },
@@ -5397,6 +5409,10 @@
             "type": "boolean",
             "default": false
           },
+          "hasAppliedForShopOwnership": {
+            "type": "boolean",
+            "default": false
+          },
           "blocked": {
             "type": "boolean",
             "default": false
@@ -5470,6 +5486,10 @@
             "type": "string"
           },
           "confirmed": {
+            "type": "boolean",
+            "default": false
+          },
+          "hasAppliedForShopOwnership": {
             "type": "boolean",
             "default": false
           },
