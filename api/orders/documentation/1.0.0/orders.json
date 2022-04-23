@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/carts": {
+    "/orders": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find all the orders's records",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve orders document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Cart"
+                    "$ref": "#/components/schemas/Orders"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Cart"
+          "Orders"
         ],
         "parameters": [
           {
@@ -194,14 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new record",
+        "description": "Create a new orders record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve orders document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Cart"
+                  "$ref": "#/components/schemas/Orders"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Cart"
+          "Orders"
         ],
         "requestBody": {
           "description": "",
@@ -247,77 +247,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCart"
+                "$ref": "#/components/schemas/NewOrders"
               }
             }
           }
         }
       }
     },
-    "/carts/me": {
+    "/orders/count": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Retrieve the number of orders documents",
         "responses": {
           "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Cart"
-        ],
-        "parameters": []
-      }
-    },
-    "/carts/count": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
+            "description": "Retrieve orders document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -363,22 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Cart"
+          "Orders"
         ],
         "parameters": []
       }
     },
-    "/carts/{id}": {
+    "/orders/{id}": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find one orders record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve orders document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Cart"
+                  "$ref": "#/components/schemas/Orders"
                 }
               }
             }
@@ -416,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Cart"
+          "Orders"
         ],
         "parameters": [
           {
@@ -433,14 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a record",
+        "description": "Update a single orders record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve orders document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Cart"
+                  "$ref": "#/components/schemas/Orders"
                 }
               }
             }
@@ -478,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Cart"
+          "Orders"
         ],
         "requestBody": {
           "description": "",
@@ -486,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCart"
+                "$ref": "#/components/schemas/NewOrders"
               }
             }
           }
@@ -506,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a record",
+        "description": "Delete a single orders record",
         "responses": {
           "200": {
-            "description": "deletes a single record based on the ID supplied",
+            "description": "deletes a single orders based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -552,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Cart"
+          "Orders"
         ],
         "parameters": [
           {
@@ -571,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Cart": {
+      "Orders": {
         "required": [
           "id"
         ],
@@ -579,101 +522,50 @@
           "id": {
             "type": "string"
           },
-          "product": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "shop": {
-                "type": "string"
-              },
-              "slug": {
-                "type": "uid"
-              },
-              "images": {
-                "type": "array",
-                "items": {
+          "address": {
+            "type": "string"
+          },
+          "phone_number": {
+            "type": "string"
+          },
+          "cart_items": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "product": {
+                  "type": "string"
+                },
+                "quantity": {
+                  "type": "integer"
+                },
+                "user": {
+                  "type": "string"
+                },
+                "is_active": {
+                  "type": "boolean"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
                   "type": "string"
                 }
-              },
-              "isAvailable": {
-                "type": "boolean"
-              },
-              "description": {
-                "type": "string"
-              },
-              "price": {
-                "type": "number"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
               }
             }
           },
-          "quantity": {
-            "type": "integer"
+          "is_processed": {
+            "type": "boolean"
           },
-          "user": {
-            "required": [
-              "id",
-              "username",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "confirmationToken": {
-                "type": "string"
-              },
-              "confirmed": {
-                "type": "boolean"
-              },
-              "hasAppliedForShopOwnership": {
-                "type": "boolean"
-              },
-              "blocked": {
-                "type": "boolean"
-              },
-              "role": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "is_active": {
+          "is_delivered": {
             "type": "boolean"
           },
           "published_at": {
@@ -682,18 +574,24 @@
           }
         }
       },
-      "NewCart": {
+      "NewOrders": {
         "properties": {
-          "product": {
+          "address": {
             "type": "string"
           },
-          "quantity": {
-            "type": "integer"
-          },
-          "user": {
+          "phone_number": {
             "type": "string"
           },
-          "is_active": {
+          "cart_items": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "is_processed": {
+            "type": "boolean"
+          },
+          "is_delivered": {
             "type": "boolean"
           },
           "published_at": {
@@ -712,7 +610,7 @@
   },
   "tags": [
     {
-      "name": "Cart"
+      "name": "Orders"
     }
   ]
 }

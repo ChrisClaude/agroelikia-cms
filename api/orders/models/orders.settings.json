@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "cart_items",
+  "collectionName": "orders",
   "info": {
-    "name": "Cart Items",
+    "name": "Orders",
     "description": ""
   },
   "options": {
@@ -12,17 +12,19 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "product": {
-      "model": "product"
+    "address": {
+      "type": "text"
     },
-    "quantity": {
-      "type": "integer"
+    "phone_number": {
+      "type": "string"
     },
-    "user": {
-      "plugin": "users-permissions",
-      "model": "user"
+    "cart_items": {
+      "collection": "cart"
     },
-    "is_active": {
+    "is_processed": {
+      "type": "boolean"
+    },
+    "is_delivered": {
       "type": "boolean"
     }
   }
