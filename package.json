@@ -44,5 +44,9 @@
     "node": ">=10.16.0 <=14.x.x",
     "npm": "^6.0.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "MTNMobileMoney": {
+    "PrimaryKey": "b188055b2779480a9a08bda445f4d142",
+    "SecondaryKey": "f8c509770f9c4dee88cdd810fecb2fe5"
+  }
 }
